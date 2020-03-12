@@ -41,7 +41,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public -m $(git log -1 --pretty=%B)",
+    "deploy": "gatsby build && gh-pages -d public -m \"$(git log -1 --pretty=%B)\"",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
