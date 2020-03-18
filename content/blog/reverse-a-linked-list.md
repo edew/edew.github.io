@@ -2,6 +2,7 @@
 title: "Reverse a linked list"
 date: "2020-02-04"
 description: "How would we write a function to reverse a linked list?"
+draft: false
 ---
 
 Suppose we have a linked list where each node is a Node:
@@ -31,7 +32,7 @@ Then while the `current` node is not null we:
 - assign the `current` node's next property to the value of `previous`
 - assign `current` to the value of `next`
 
-Finally, once the value of current is null, we return the value of previous.
+Finally once the value of current is null we return the value of previous.
 
 ```javascript
 const reverse = head => {
