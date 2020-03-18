@@ -11,9 +11,9 @@ How can we calculate the number of 1 bits in the binary representation of the nu
 
 ## The algorithm
 
-Luckily this is a well defined problem, in fact Peter Wegner described a algorithm for doing just this sixty years ago!
+Luckily this is a well defined problem, in fact Peter Wegner described an algorithm for doing just this sixty years ago!
 
-The function takes a `number` as it's argument and returns the count of 1 bits in that number.
+The function takes a `number` as its argument and returns the count of 1 bits in that number.
 
 ```javascript
 const weight = number => {
@@ -28,7 +28,7 @@ const weight = number => {
 }
 ```
 
-While the `number` is greater than zero we reassign it's value to be the bitwise and of `number` and `number - 1` and increment `count` by one. Finally once the number is zero we return the count. This algorithm works by changing the rightmost 1 bit to 0 in each iteration, continuing until all the bits have been set to 0 (i.e. `number` is zero).
+While the `number` is greater than zero we reassign its value to be the bitwise and of `number` and `number - 1` and increment `count` by one. Finally once the number is zero we return the count. This algorithm works by changing the rightmost 1 bit to 0 in each iteration, continuing until all the bits have been set to 0 (i.e. `number` is zero).
 
 Let's walk through the algorithm for the number 9<sub>10</sub>, or 00001001<sub>2</sub>. First we initialise `number` to `9`, `count` to `0`:
 
