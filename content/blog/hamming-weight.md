@@ -2,7 +2,7 @@
 title: "Hamming weight"
 date: "2020-03-15"
 description: "How can we calculate the number of 1 bits in a number?"
-draft: true
+draft: false
 ---
 
 Suppose we have the number 45<sub>10</sub>, or 00101101<sub>2</sub>.
@@ -28,13 +28,9 @@ const weight = number => {
 }
 ```
 
-While the `number` is greater than zero we reassign it's value to be the bitwise and of `number` and `number - 1` and increment `count` by one. Finally once the number is zero we return the count.
+While the `number` is greater than zero we reassign it's value to be the bitwise and of `number` and `number - 1` and increment `count` by one. Finally once the number is zero we return the count. This algorithm works by changing the rightmost 1 bit to 0 in each iteration, continuing until all the bits have been set to 0 (i.e. `number` is zero).
 
-This algorithm works by changing the rightmost 1 bit to 0 in each iteration, continuing until all the bits have been set to 0 (i.e. `number` is zero).
-
-Let's walk through the algorithm for the number 9<sub>10</sub>, or 00001001<sub>2</sub>.
-
-First we initialise `number` to `9`, `count` to `0`:
+Let's walk through the algorithm for the number 9<sub>10</sub>, or 00001001<sub>2</sub>. First we initialise `number` to `9`, `count` to `0`:
 
 ```javascript
 let number = 9
@@ -55,7 +51,7 @@ number = number &= number - 1
 count += 1
 ```
 
-Is `number` still greater than zero? No! So we're done and the number of 1 bits in the original value of `number` is given by the value of `count`, which is `2` in this case.
+Is `number` still greater than zero? No, so we're done! The number of 1 bits in the original value of `number` is given by the value of `count`, which is `2` in this case.
 
 ## Further examples
 
