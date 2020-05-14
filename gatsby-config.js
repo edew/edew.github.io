@@ -1,11 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `dewhurst.io`,
+    title: `For me`,
     author: {
       name: `Edward Dewhurst`,
-      summary: `a software engineer living and working in London, UK`,
     },
-    description: `My personal blog.`,
+    description: `A blog for Edward Dewhurst, by Edward Dewhurst.`,
     siteUrl: `https://www.dewhurst.io/`,
   },
   plugins: [
