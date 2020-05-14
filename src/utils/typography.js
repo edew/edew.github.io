@@ -1,6 +1,19 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
 
+Wordpress2016.headerFontFamily = ["Merriweather", "serif"]
+Wordpress2016.bodyFontFamily = ["Open Sans", "sans-serif"]
+Wordpress2016.googleFonts = [
+  {
+    name: "Open Sans",
+    styles: ["700"],
+  },
+  {
+    name: "Merriweather",
+    styles: ["400", "400i", "700", "700i", "900", "900i"],
+  },
+]
+
 Wordpress2016.overrideThemeStyles = () => {
   return {
     "a.gatsby-resp-image-link": {
@@ -11,6 +24,7 @@ Wordpress2016.overrideThemeStyles = () => {
     },
     "header h1": {
       color: "#DD4A68",
+      fontFamily: "Merriweather, serif",
     },
   }
 }
