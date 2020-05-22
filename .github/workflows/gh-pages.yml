@@ -1,0 +1,29 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - run: yarn install --frozen-lockfile
+
+      - run: yarn build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          user_name: ${{ secrets.USER_NAME }}
+          user_email: ${{ secrets.USER_EMAIL }}
+          publish_dir: ./public
+          cname: www.dewhurst.io
